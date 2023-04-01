@@ -171,7 +171,7 @@ export class XsdService {
 
   select(version: Version): void {
     this.http
-      .get(`/assets/schemas/${version}.xsd`, {
+      .get(`assets/schemas/${version}.xsd`, {
         responseType: 'text',
         headers: {
           'content-type': 'application/xml',
