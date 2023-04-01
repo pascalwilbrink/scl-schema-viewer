@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 
+import { environment } from '../environments/environment';
+
 export type Version = '2007B' | '2007B4';
 
 export const VERSIONS: Version[] = ['2007B', '2007B4'];
@@ -171,7 +173,7 @@ export class XsdService {
 
   select(version: Version): void {
     this.http
-      .get(`assets/schemas/${version}.xsd`, {
+      .get(`${environment.getBaseUrl()}assets/schemas/${version}.xsd`, {
         responseType: 'text',
         headers: {
           'content-type': 'application/xml',
