@@ -173,7 +173,7 @@ export class XsdService {
 
   select(version: Version): void {
     this.http
-      .get(`${environment.getBaseUrl()}assets/schemas/${version}.xsd`, {
+      .get(`${environment.baseUrl}assets/schemas/${version}.xsd`, {
         responseType: 'text',
         headers: {
           'content-type': 'application/xml',
